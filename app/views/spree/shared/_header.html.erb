@@ -1,0 +1,10 @@
+<header id="header">     
+	<%= link_to root_path do%>   
+        <figure id="logo" class="col-md-4 col-sm-12" data-hook>
+            <%= logo %>
+        </figure>
+        <h1>Little Honey</h1>
+    <%end%>
+        <%= render partial: 'spree/shared/main_nav_bar' if store_menu? %>
+   
+</header>

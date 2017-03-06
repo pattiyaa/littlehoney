@@ -1,0 +1,151 @@
+//Add your custom bootstrap variables here, see https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss for full list of variables.
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+.panel-default {
+	border-color: transparent;
+	
+}
+.product-item{
+	padding: 10px;
+}
+.product-item .btn-success{
+	background-color: #C0DED8;
+	border-color: #C0DED8;
+}
+
+.product-item .btn-success:hover{
+	background-color: white;
+	border-color: #C0DED8;
+}
+.product-item .btn-success:hover span{
+	color: #C0DED8;
+}
+.form-group .input-group input[type="number"]{
+	height: 3.5em;
+}
+img.product-item{
+
+	height: 240px;
+}
+.product-variant-dropdown{
+	width:350%; 
+	
+}
+.product-variant-dropdown li{
+	padding:  0 15px;
+	
+}
+@media screen and (max-width: 736px) {
+	.product-variant-dropdown{
+	width:250%; 
+	
+	}
+}
+@media screen and (max-width: 480px) {
+	.product-variant-dropdown{
+	width:350%; 
+	
+	}
+}
+#taxonomies .list-group .list-group-item.active{
+	background-color: #F6C5BB;
+	border-color: #F6C5BB;
+}
+#breadcrumbs .breadcrumb{
+	    background-color: #E8D6E3;
+}
+#breadcrumbs .breadcrumb a{
+	color: grey;
+}
+.navigation.filter{
+	padding: 10px 0 20px 0;
+}
+.navigation.filter li{
+	padding: 5px 10px; 
+}
+.navigation.filter li label{
+	position: relative;
+	top: 3px;
+	padding: 0 4px;
+}
+@media screen and (min-width: 580px) {
+.navigation.filter li{
+	font-size: 65%;
+}
+
+}
+#main-image{
+	height: 270px;
+}
+#cart_items th{
+	background-color: #D5C8D3;
+}
+#cart_items tr.cart-total{
+	background-color: #F9EFC4;
+}
+
+@media only screen and (max-width: 800px) {
+	#cart_items  td:nth-child(2), 
+	#cart_items  th:nth-child(2),
+	.cart-subtotal td:nth-child(1) {display: none;};
+	
+}
+#cart-form .btn-success{
+	background-color: #C0DED8;
+	border-color: #C0DED8;
+}
+#cart-form .btn-success:hover{
+	background-color: white;
+	color: #C0DED8;
+	
+}
+#cart-form .btn-primary{
+	background-color: #D5C8D3;
+	border-color: #D5C8D3;
+}
+#cart-form .btn-primary:hover{
+	background-color: white;
+	color: #D5C8D3;
+	border-color: #D5C8D3;
+}
+#cart-form .btn-default:hover{
+	background-color: transparent;
+}
+#cart-form .btn-apply{
+	height:35px; border:solid 2px #e5e6e7;
+}
+#cart-form .btn-apply:hover{
+	background-color: #e5e6e7;
+}
+#clear_cart_link  .btn-default{
+   background-color: #F6C5BB;
+}
+.table thead tr{
+	    background-color: #D5C8D3
+}
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+  color: #fff;
+  background-color: #E8D6E3;
+}
+.nav-justified > li > a, .nav-tabs.nav-justified > li > a {
+	color: #39454B ;
+	background-color: #eeeeee;
+	margin: 1px;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: #E8D6E3;
+}
+.well{
+	background-color: transparent;
+	border: none;
+}
+.alert{
+	color: #F6C5BB;
+}
+.panel-default > .panel-heading {
+  
+  background-color: #F9EFC4;
+  
+}

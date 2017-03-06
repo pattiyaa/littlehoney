@@ -1,0 +1,30 @@
+th:
+  spree:
+    promotion_label: 'โปรโมชั่น'
+    cart: ''
+    logout: 'Log out'
+    saccount: '''s account'
+    variants: 'เลือกแบบ'
+    coupon_code_apply: 'ใช้คูปอง'
+    returns: 'คืน'
+    quick_search: 'ค้นหา'
+    use_existing_cc: 'ใช้ข้อมูลบัตรเครดิตใบเดิม'
+    use_new_cc_or_payment_method: 'เลือกชำระเงินแบบอื่น'
+    order_adjustments: 'ส่วนลด'
+    product_rule: 
+      label: 'กฎ'
+    payment_states:
+      balance_due: 'รอการแจ้งชำระเงิน'
+      credit_owed: 'รอรับเครดิตเงินคืน'
+      paid: 'ชำระแล้ว'
+    total: 'จำนวนเงิน'
+    cart_subtotal: 'ยอดรวม'
+    final_total: 'ยอดสุทธิ'
+  activerecord:
+    attributes:
+      spree/order:
+        considered_risky: 'ประเมินความเสี่ยง'
+  devise:
+    sessions:
+      spree_user:
+        signed_out: 'ท่านได้ออกจากระบบเรียบร้อยแล้ว'

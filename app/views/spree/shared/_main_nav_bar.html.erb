@@ -1,0 +1,21 @@
+<nav >
+<div id="main-nav-bar" class="navbar">
+ <ul id="nav">
+    <li id="home-link" data-hook><%= link_to 'Home', spree.root_path %></li>
+    <li><a href="<%=  root_path(:anchor => 'promotion') %>">Promotion</a></li>
+    <li><a href="<%= products_path%>">Shop</a></li>
+    <li><a href="#diy">DIY</a></li>
+    <li><a href="<%=  root_path(:anchor => 'contact') %>">Contact</a></li>
+     <li id="link-to-cart" data-hook>
+        <noscript>
+          <%= link_to Spree.t(:cart), '/cart' %>
+        </noscript>
+       
+      </li>
+      <li><%= render partial: 'spree/shared/login_bar' %></li>
+  </ul>
+  <ul class="nav navbar-right" data-hook>
+      <script>Spree.fetch_cart()</script>  
+  </ul>
+</div>
+</nav>
