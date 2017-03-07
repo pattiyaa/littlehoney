@@ -9,8 +9,10 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# # Use sqlite3 as the database for Active Record
+# gem 'sqlite3'
+# Use postgresql as the database for Active Record
+gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -64,3 +66,4 @@ gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'activemerchant', github: 'omise/active_merchant'
 gem 'offsite_payments'
 gem 'spree-omise', github: 'omise/spree-omise'
+gem 'spree_mail_settings', github: 'spree-contrib/spree_mail_settings', branch: 'master'

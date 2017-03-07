@@ -33,9 +33,10 @@
                 
                   <% if product.has_variants? %>
                   <ul>
-                    <% product.variant_images.each do |i| %>
+                    <% product.variant_images.each_with_index do |i,indexx| %>
                       <% next if product.images.include?(i) %>
-                      <li class='vtmb tmb-<%= i.viewable.id %>'>
+
+                      <li  class='vtmb tmb-<%= i.viewable.id %>' style='display:<%= indexx ==1 ? 'block': 'none'%>' >
                         <%= image_tag(i.attachment.url, class: "product-item") %> 
                       </li>
                     <% end %>
@@ -46,7 +47,6 @@
                     <%= product_image(product, itemprop: "image", class: "product-item") %>
                     </li>
                     </ul>
-                    
                   <%end%>
                 
                 <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', title: product.name) %>
@@ -56,7 +56,7 @@
             <div class=" text-center">
              <div id="cart-form" data-hook="cart_form">
              
-              <%= render partial: 'spree/products/cart_form_mini'%>
+              <%= render partial: 'spree/products/cart_form_mini', :locals => {product: product} %>
             </div>
             </div>
           <% end %>
