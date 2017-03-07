@@ -20,6 +20,7 @@ th:
     total: 'จำนวนเงิน'
     cart_subtotal: 'ยอดรวม'
     final_total: 'ยอดสุทธิ'
+    backordered: 'รอสั่ง'
   activerecord:
     attributes:
       spree/order:
