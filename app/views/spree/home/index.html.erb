@@ -9,7 +9,25 @@
 		<footer>
 			<a href="#promotion" class="button style2 down">More</a>
 		</footer>
+		 <!-- product tag -->
+		 <% product = Spree::Product.find(1)%>
+		 <% url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
+		  <%= link_to(url)  do %>
+		  <div  style="
+			    position: fixed;
+			    top: 270px;
+			     ">
+			<%= content_tag(:span, truncate(product.name, length: 50), class: 'info', title: product.name) %>
+		  <span class="glyphicon glyphicon-tag" style="border: white 1px solid;
+			    padding: 11px;
+			    border-radius: 50%; ">
+			    	</span><br/>
+			
+			</div>
+		  <%end%>
+
 	</div>
+	
 </section>
 
 <!-- Promotion -->
