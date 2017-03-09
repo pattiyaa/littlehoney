@@ -3,11 +3,11 @@
 
 @font-face {
   font-family: "Quark";
-  src: url(/assets/Quark-Light.otf) format("truetype");
+  src: url(/fonts/Quark-Light.otf) format("truetype");
 }
 @font-face {
   font-family: "Quark";
-  src: url(/assets/Quark-Bold.otf) format("truetype");
+  src: url(/fonts/Quark-Bold.otf) format("truetype");
   font-weight: bold;
 }
 /*
@@ -678,7 +678,7 @@
 			height: 5em;
 			line-height: 4.5em;
 			padding: 0;
-			background-image: url("images/dark-arrow.svg");
+			background-image: url("/assets/images/dark-arrow.svg");
 			background-position: center center;
 			background-repeat: no-repeat;
 			text-indent: -10em;
@@ -2165,7 +2165,7 @@
 			#nav.js {
 					display: none;
 				}
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 900px) {
 
 			#header {
 				height: 2.5em;
@@ -2207,7 +2207,7 @@
 		}
 
 
-		@media screen and (min-width: 736px) {
+		@media screen and (min-width: 900px) {
 			#menu {
 				display: none;
 			}
@@ -2379,7 +2379,7 @@
 				}
 
 				.main.dark .button.style2.down {
-					background-image: url("images/dark-arrow.svg");
+					background-image: url("/assets/images/dark-arrow.svg");
 				}
 
 		body.is-touch .main {
@@ -2563,7 +2563,7 @@
 /* Intro */
 
 	#intro {
-		background: url("images/overlay.png"), url("images/intro.jpg");
+		background: url("/assets/images/overlay.png"), url("/assets/images/intro.jpg");
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, bottom center;

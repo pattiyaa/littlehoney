@@ -27,15 +27,25 @@ Rails.application.configure do
   end
 
   # Don't care if the mailer can't send.
+  config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { :host => "localhost:3000" }
-  config.action_mailer.delivery_method = :smtp
+   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :address => "localhost",
-    :port => 25,
-    :domain => "dev.localhost.com",
-  }
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               'littlehoneyclub.com',
+    user_name:            'littlehoneyclub@gmail.com',
+    password:             'littlehonetpassword',
+    authentication:       'plain',
+    enable_starttls_auto: true  }
+  # config.action_mailer.default_url_options = { :host => "localhost:3000" }
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   :address => "localhost",
+  #   :port => 25,
+  #   :domain => "dev.localhost.com",
+  # }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -46,7 +56,7 @@ Rails.application.configure do
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
-  config.assets.debug = true
+  config.assets.debug = false
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
