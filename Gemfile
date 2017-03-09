@@ -67,3 +67,5 @@ gem 'activemerchant', github: 'omise/active_merchant'
 gem 'offsite_payments'
 gem 'spree-omise', github: 'omise/spree-omise'
 gem 'spree_mail_settings', github: 'spree-contrib/spree_mail_settings', branch: 'master'
+gem "paperclip"
+
