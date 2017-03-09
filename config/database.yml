@@ -79,10 +79,18 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+# production:
+#   <<: *default
+#   database: littlehoney_production
+#   username: littlehoney
+#   password: <%= ENV['LITTLEHONEY_DATABASE_PASSWORD'] %>
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: utf8
   database: littlehoney_production
-  username: littlehoney
-  password: <%= ENV['LITTLEHONEY_DATABASE_PASSWORD'] %>
+  pool: <%= ENV['LIT_DB_PORT'] %>
+  username: <%= ENV['LIT_DB_USER'] %>
+  password: <%= ENV['LIT_DB_PASSWORD'] %>
+  host: <%= ENV['LIT_DB_HOST'] %>
 
 
