@@ -537,7 +537,7 @@
 		}
 
 	h1, h2, h3, h4, h5, h6 {
-		
+
 		font-weight: 900;
 		color: inherit;
 		letter-spacing: -0.0325em;
@@ -1713,7 +1713,7 @@
 			-moz-transform: translateX(0);
 			-webkit-transform: translateX(0);
 			-ms-transform: translateX(0);
-			transform: translateX(0);
+			transform: none;
 			width: 50%;
 			position: relative;
 			opacity: 1.0;
@@ -2189,7 +2189,7 @@
 				/*#header nav {
 					display: none;
 				}*/
-	
+
 				#nav  {
 					width: 50%;
 				    float: right;
@@ -2640,7 +2640,7 @@
 
 	}
 	@media screen and (max-width: 736px) {
-		
+
 		#logo img{
 		max-width: 100%;
 		max-height: 70px;
@@ -2657,4 +2657,4 @@
      padding: 19px 0px;
  }
 }
-	
+
