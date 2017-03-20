@@ -2165,6 +2165,13 @@
 			#nav.js {
 					display: none;
 				}
+		@media screen and (max-width: 736px) {
+			#nav  {
+				    top: 32px;
+				}
+
+		}
+
 		@media screen and (max-width: 900px) {
 
 			#header {
@@ -2194,7 +2201,7 @@
 					width: 50%;
 				    float: right;
 				    position: relative;
-				    top: 32px;
+				    top: 43px;
 				    right: -40px;
 				    list-style: none;
 				    text-align: right;

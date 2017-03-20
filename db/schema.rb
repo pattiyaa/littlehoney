@@ -10,10 +10,120 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170222030613) do
+ActiveRecord::Schema.define(version: 20170317124154) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comfy_cms_blocks", force: :cascade do |t|
+    t.string   "identifier",     null: false
+    t.text     "content"
+    t.string   "blockable_type"
+    t.integer  "blockable_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["blockable_id", "blockable_type"], name: "index_comfy_cms_blocks_on_blockable_id_and_blockable_type", using: :btree
+    t.index ["identifier"], name: "index_comfy_cms_blocks_on_identifier", using: :btree
+  end
+
+  create_table "comfy_cms_categories", force: :cascade do |t|
+    t.integer "site_id",          null: false
+    t.string  "label",            null: false
+    t.string  "categorized_type", null: false
+    t.index ["site_id", "categorized_type", "label"], name: "index_cms_categories_on_site_id_and_cat_type_and_label", unique: true, using: :btree
+  end
+
+  create_table "comfy_cms_categorizations", force: :cascade do |t|
+    t.integer "category_id",      null: false
+    t.string  "categorized_type", null: false
+    t.integer "categorized_id",   null: false
+    t.index ["category_id", "categorized_type", "categorized_id"], name: "index_cms_categorizations_on_cat_id_and_catd_type_and_catd_id", unique: true, using: :btree
+  end
+
+  create_table "comfy_cms_files", force: :cascade do |t|
+    t.integer  "site_id",                                    null: false
+    t.integer  "block_id"
+    t.string   "label",                                      null: false
+    t.string   "file_file_name",                             null: false
+    t.string   "file_content_type",                          null: false
+    t.integer  "file_file_size",                             null: false
+    t.string   "description",       limit: 2048
+    t.integer  "position",                       default: 0, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["site_id", "block_id"], name: "index_comfy_cms_files_on_site_id_and_block_id", using: :btree
+    t.index ["site_id", "file_file_name"], name: "index_comfy_cms_files_on_site_id_and_file_file_name", using: :btree
+    t.index ["site_id", "label"], name: "index_comfy_cms_files_on_site_id_and_label", using: :btree
+    t.index ["site_id", "position"], name: "index_comfy_cms_files_on_site_id_and_position", using: :btree
+  end
+
+  create_table "comfy_cms_layouts", force: :cascade do |t|
+    t.integer  "site_id",                    null: false
+    t.integer  "parent_id"
+    t.string   "app_layout"
+    t.string   "label",                      null: false
+    t.string   "identifier",                 null: false
+    t.text     "content"
+    t.text     "css"
+    t.text     "js"
+    t.integer  "position",   default: 0,     null: false
+    t.boolean  "is_shared",  default: false, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["parent_id", "position"], name: "index_comfy_cms_layouts_on_parent_id_and_position", using: :btree
+    t.index ["site_id", "identifier"], name: "index_comfy_cms_layouts_on_site_id_and_identifier", unique: true, using: :btree
+  end
+
+  create_table "comfy_cms_pages", force: :cascade do |t|
+    t.integer  "site_id",                        null: false
+    t.integer  "layout_id"
+    t.integer  "parent_id"
+    t.integer  "target_page_id"
+    t.string   "label",                          null: false
+    t.string   "slug"
+    t.string   "full_path",                      null: false
+    t.text     "content_cache"
+    t.integer  "position",       default: 0,     null: false
+    t.integer  "children_count", default: 0,     null: false
+    t.boolean  "is_published",   default: true,  null: false
+    t.boolean  "is_shared",      default: false, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["parent_id", "position"], name: "index_comfy_cms_pages_on_parent_id_and_position", using: :btree
+    t.index ["site_id", "full_path"], name: "index_comfy_cms_pages_on_site_id_and_full_path", using: :btree
+  end
+
+  create_table "comfy_cms_revisions", force: :cascade do |t|
+    t.string   "record_type", null: false
+    t.integer  "record_id",   null: false
+    t.text     "data"
+    t.datetime "created_at"
+    t.index ["record_type", "record_id", "created_at"], name: "index_cms_revisions_on_rtype_and_rid_and_created_at", using: :btree
+  end
+
+  create_table "comfy_cms_sites", force: :cascade do |t|
+    t.string  "label",                       null: false
+    t.string  "identifier",                  null: false
+    t.string  "hostname",                    null: false
+    t.string  "path"
+    t.string  "locale",      default: "en",  null: false
+    t.boolean "is_mirrored", default: false, null: false
+    t.index ["hostname"], name: "index_comfy_cms_sites_on_hostname", using: :btree
+    t.index ["is_mirrored"], name: "index_comfy_cms_sites_on_is_mirrored", using: :btree
+  end
+
+  create_table "comfy_cms_snippets", force: :cascade do |t|
+    t.integer  "site_id",                    null: false
+    t.string   "label",                      null: false
+    t.string   "identifier",                 null: false
+    t.text     "content"
+    t.integer  "position",   default: 0,     null: false
+    t.boolean  "is_shared",  default: false, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["site_id", "identifier"], name: "index_comfy_cms_snippets_on_site_id_and_identifier", unique: true, using: :btree
+    t.index ["site_id", "position"], name: "index_comfy_cms_snippets_on_site_id_and_position", using: :btree
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -44,6 +154,8 @@ ActiveRecord::Schema.define(version: 20170222030613) do
     t.integer  "country_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.integer  "user_id"
+    t.datetime "deleted_at"
     t.index ["country_id"], name: "index_spree_addresses_on_country_id", using: :btree
     t.index ["firstname"], name: "index_addresses_on_firstname", using: :btree
     t.index ["lastname"], name: "index_addresses_on_lastname", using: :btree
@@ -137,6 +249,18 @@ ActiveRecord::Schema.define(version: 20170222030613) do
     t.integer  "stock_location_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+  end
+
+  create_table "spree_feedback_reviews", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "review_id",                 null: false
+    t.integer  "rating",     default: 0
+    t.text     "comment"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.string   "locale",     default: "en"
+    t.index ["review_id"], name: "index_spree_feedback_reviews_on_review_id", using: :btree
+    t.index ["user_id"], name: "index_spree_feedback_reviews_on_user_id", using: :btree
   end
 
   create_table "spree_gateways", force: :cascade do |t|
@@ -386,7 +510,7 @@ ActiveRecord::Schema.define(version: 20170222030613) do
   end
 
   create_table "spree_products", force: :cascade do |t|
-    t.string   "name",                 default: "",   null: false
+    t.string   "name",                                         default: "",    null: false
     t.text     "description"
     t.datetime "available_on"
     t.datetime "deleted_at"
@@ -395,11 +519,13 @@ ActiveRecord::Schema.define(version: 20170222030613) do
     t.string   "meta_keywords"
     t.integer  "tax_category_id"
     t.integer  "shipping_category_id"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.boolean  "promotionable",        default: true
+    t.datetime "created_at",                                                   null: false
+    t.datetime "updated_at",                                                   null: false
+    t.boolean  "promotionable",                                default: true
     t.string   "meta_title"
     t.datetime "discontinue_on"
+    t.decimal  "avg_rating",           precision: 7, scale: 5, default: "0.0", null: false
+    t.integer  "reviews_count",                                default: 0,     null: false
     t.index ["available_on"], name: "index_spree_products_on_available_on", using: :btree
     t.index ["deleted_at"], name: "index_spree_products_on_deleted_at", using: :btree
     t.index ["discontinue_on"], name: "index_spree_products_on_discontinue_on", using: :btree
@@ -608,6 +734,23 @@ ActiveRecord::Schema.define(version: 20170222030613) do
     t.boolean  "resellable",                                               default: true,  null: false
     t.index ["customer_return_id"], name: "index_return_items_on_customer_return_id", using: :btree
     t.index ["exchange_inventory_unit_id"], name: "index_spree_return_items_on_exchange_inventory_unit_id", using: :btree
+  end
+
+  create_table "spree_reviews", force: :cascade do |t|
+    t.integer  "product_id"
+    t.string   "name"
+    t.string   "location"
+    t.integer  "rating"
+    t.text     "title"
+    t.text     "review"
+    t.boolean  "approved",        default: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.integer  "user_id"
+    t.string   "ip_address"
+    t.string   "locale",          default: "en"
+    t.boolean  "show_identifier", default: true
+    t.index ["show_identifier"], name: "index_spree_reviews_on_show_identifier", using: :btree
   end
 
   create_table "spree_role_users", force: :cascade do |t|

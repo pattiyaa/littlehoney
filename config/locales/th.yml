@@ -21,10 +21,28 @@ th:
     cart_subtotal: 'ยอดรวม'
     final_total: 'ยอดสุทธิ'
     backordered: 'รอสั่ง'
+    top_reviews: 'รีวิวล่าสุด'
+    star: '%{count}'
+    out_of_5: '/5'
+    based_upon_review_count: 'จาก %{count} รีวิว'
+    you_must_enter_value_for_rating: 'กรุณาให้คะแนน'
+    average_customer_rating: 'คะแนนรีวิวเฉลี่ย'
+    submit_your_review: 'รีวิว'
+    voice: 'มี %{count} คนเห็นว่ารีวิวนี้มีประโยชน์'
+    was_this_review_helpful: 'คุณเห็นด้วยหรือไม่'
+    say_yes: 'ใช่'
+    say_no: 'ไม่'
+    submitted_by: 'โดย'
+    submitted_on: 'เมื่อ'
   activerecord:
     attributes:
       spree/order:
         considered_risky: 'ประเมินความเสี่ยง'
+  address_book:
+    successfully_created: 'เพิ่มที่อยู่เรียบร้อย'
+    successfully_updated: 'ปรับปรุงที่อยู่เรียบร้อย'
+    successfully_removed: 'ลบที่อยู่แล้ว'
+    save: 'บันทึก'
   devise:
     sessions:
       spree_user:

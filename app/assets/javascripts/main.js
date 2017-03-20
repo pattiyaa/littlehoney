@@ -49,6 +49,7 @@
 		// Nav.
 			
 			$("#nav").addClass("js").before('<div id="menu">☰</div>');
+			$("#nav").hide();
 			$("#menu").click(function(){
 				$("#nav").toggle();
 
@@ -58,12 +59,14 @@
 				
 			});
 			$(window).resize(function(){
-				if(window.innerWidth > 736) {
+				if(window.innerWidth > 900) {
 					$("#nav").removeAttr("style");
 					$("#nav").removeClass('js');
 
+
 				}else{
 					$("#nav").addClass('js');
+					$("#nav").hide();
 				}
 			});
 

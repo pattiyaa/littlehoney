@@ -144,8 +144,29 @@ img.product-item{
 .alert{
 	color: #F6C5BB;
 }
-.panel-default > .panel-heading {
-  
-  background-color: #F9EFC4;
-  
+.panel{
+	background-color:transparent;
 }
+.panel-default > .panel-heading {
+  background-color: #F9EFC4;
+}
+/*.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.result .rating > span.active:before{
+	content: "\2605";
+	color:gold;
+	position: absolute;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   color:gold;
+   position: absolute;
+}*/

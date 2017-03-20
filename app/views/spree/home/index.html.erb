@@ -10,7 +10,7 @@
 			<a href="#promotion" class="button style2 down">More</a>
 		</footer>
 		 <!-- product tag -->
-		 <% product = Spree::Product.find(1)%>
+		 <% product = Spree::Product.find_by(:id => 1)? Spree::Product.find_by(:id => 1): Spree::Product.new(:id => 1) %>
 		 <% url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
 		  <%= link_to(url)  do %>
 		  <div  style="
