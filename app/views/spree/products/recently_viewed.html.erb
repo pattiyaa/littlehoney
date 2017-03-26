@@ -1,0 +1,40 @@
+<% if cached_recently_viewed_products.any? %>
+  <div id="recently_viewed" data-hook>
+    <h3 class="product-section-title"><%= Spree.t(:recently_viewed_products) %></h3>
+
+   <div id="recently_products" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <% cached_recently_viewed_products.each_with_index do |product,index| %>
+      <li data-target="#myCarousel" data-slide-to="<%=index%>" class="active"></li>
+      <% end -%>
+      
+    </ol>
+
+    <div class="carousel-inner" role="listbox">
+
+       <% cached_recently_viewed_products.each_with_index do |product,index| %>
+        <div class="item <%= index == 1 ? 'active' : ''%>">
+			<div class="panel-body text-center">
+			  <% url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
+              <%= render partial: 'spree/products/photos', :locals => {product: product, url: url} %>
+              <%= render partial: 'spree/products/cart_form_mini', :locals => {product: product} %>
+            </div>
+       <!--  <%= link_to product.name, product %> -->
+
+        </div>
+      <% end -%>
+    </div>
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#recently_products" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#recently_products" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+    </div>
+    
+  </div>
+<% end %>

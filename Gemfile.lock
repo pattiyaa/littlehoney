@@ -44,6 +44,13 @@ GIT
       spree_backend (>= 3.1.0, < 4.0)
 
 GIT
+  remote: https://github.com/spree-contrib/spree_recently_viewed.git
+  revision: de77ec6bb3e888b659be2f9fae64bb49bf1552bd
+  specs:
+    spree_recently_viewed (3.2.0.alpha)
+      spree_core (~> 3.2.0.alpha)
+
+GIT
   remote: https://github.com/spree-contrib/spree_reviews.git
   revision: 1f4fc39b9e6700ea2f28cfa71192158bc6ba21ea
   specs:
@@ -434,7 +441,7 @@ GEM
       camertron-eprun
       cldr-plurals-runtime-rb (~> 1.0)
       tzinfo
-    tzinfo (1.2.2)
+    tzinfo (1.2.3)
       thread_safe (~> 0.1)
     uglifier (3.1.10)
       execjs (>= 0.3.0, < 3)
@@ -480,6 +487,7 @@ DEPENDENCIES
   spree_gateway (~> 3.2.0.beta)
   spree_i18n!
   spree_mail_settings!
+  spree_recently_viewed!
   spree_reviews!
   spree_social!
   spring

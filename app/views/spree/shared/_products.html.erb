@@ -29,7 +29,7 @@
           <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do %>
             <div class="panel-body text-center product-body">
              
-              <%= link_to(url) do %>
+     <!--          <%= link_to(url) do %>
                 
                   <% if product.has_variants? %>
                   <ul>
@@ -50,8 +50,8 @@
                   <%end%>
                 
                 <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', title: product.name) %>
-              <% end %>
-             
+              <% end %> -->
+              <%= render partial: 'spree/products/photos', :locals => {product: product, url: url} %>
             </div>
             <div class=" text-center">
              <div id="cart-form" data-hook="cart_form">
