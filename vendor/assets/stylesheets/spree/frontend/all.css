@@ -6,6 +6,7 @@
  *= require spree/frontend
  *= require main
  *= require application
+ 
 
  *= require spree/frontend/spree_reviews
  *= require spree/frontend/rating
