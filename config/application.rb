@@ -23,6 +23,15 @@ module Littlehoney
     end
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
     config.i18n.default_locale = :th
+
+
+    # # Setup the autoload
+     initializer 'main_app.auto_load' do |app|
+       Rails.application.reloader.to_run(:before) do
+         Rails.application.reloader.prepare!
+       end
+     end
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

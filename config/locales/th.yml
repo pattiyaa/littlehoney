@@ -34,6 +34,13 @@ th:
     say_no: 'ไม่'
     submitted_by: 'โดย'
     submitted_on: 'เมื่อ'
+    sign_in_through_one_of_these_services: 'สมัครสมาชิก / ล๊อคอินด้วย'
+    sign_in_with: 'ล๊อคอินด้วย'
+    sku: 'SKU'
+    spree_reviews:
+      preview_size: 'จำนวนรีวิวที่แสดง'
+    approve: 'อนุญาติ'
+    review_successfully_submitted: 'ส่งรีวิวสำเร็จ'
   activerecord:
     attributes:
       spree/order:
@@ -45,5 +52,9 @@ th:
     save: 'บันทึก'
   devise:
     sessions:
+      signed_in: 'ล๊อกอินสำเร็จ'
       spree_user:
         signed_out: 'ท่านได้ออกจากระบบเรียบร้อยแล้ว'
+    omniauth_callbacks:
+      success: 'ตรวจสอบสิทธิการใช้งานเรียบร้อย'
+
