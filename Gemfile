@@ -76,3 +76,4 @@ gem 'spree_address_book', github: 'spree-contrib/spree_address_book'
 
 gem 'spree_social', github: 'spree-contrib/spree_social'
 gem 'spree_recently_viewed', github: 'spree-contrib/spree_recently_viewed'
+gem 'spree_favorite_products', github: 'vinsol/spree_favorite_products'

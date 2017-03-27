@@ -73,6 +73,13 @@ GIT
       spree_auth_devise (>= 3.2.0.beta, < 4.0)
       spree_core (>= 3.1.0, < 4.0)
 
+GIT
+  remote: https://github.com/vinsol/spree_favorite_products.git
+  revision: 757fe7043756e7c01458fd7bfa5f019cd75072be
+  specs:
+    spree_favorite_products (3.2.0.rc2)
+      spree_core (~> 3.2.0.rc2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -484,6 +491,7 @@ DEPENDENCIES
   spree-omise!
   spree_address_book!
   spree_auth_devise (~> 3.2.0.beta)
+  spree_favorite_products!
   spree_gateway (~> 3.2.0.beta)
   spree_i18n!
   spree_mail_settings!

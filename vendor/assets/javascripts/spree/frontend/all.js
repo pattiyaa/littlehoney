@@ -13,3 +13,5 @@
 //= require spree/frontend/spree_i18n
 //= require spree/frontend/spree_reviews
 //= require spree/frontend/spree_recently_viewed
+
+//= require store/spree_favorite_products

@@ -41,6 +41,11 @@ th:
       preview_size: 'จำนวนรีวิวที่แสดง'
     approve: 'อนุญาติ'
     review_successfully_submitted: 'ส่งรีวิวสำเร็จ'
+    mark_as_favorite: 'รักเลย'
+    unmark_as_favorite: 'เฉยๆ'
+    favorite_products:
+      create:
+        success: 'สำเร็จ'
   activerecord:
     attributes:
       spree/order:

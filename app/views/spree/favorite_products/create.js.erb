@@ -1,0 +1,3 @@
+<% if @success %>
+  $('#<%=params[:id]%>.favorite_link').attr('href', '<%= favorite_product_path(:id => params[:id]) %>').data('method', 'delete').html(' <i class="fa fa-heart" aria-hidden="true"></i> ')
+<% end %>
