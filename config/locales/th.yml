@@ -46,6 +46,35 @@ th:
     favorite_products:
       create:
         success: 'สำเร็จ'
+    order_mailer:
+      subtotal: ! 'ราคา:'
+      total: ! 'ยอดสุทธิ:'
+      cancel_email:
+        dear_customer: Dear Customer,
+        instructions: Your order has been CANCELED.  Please retain this cancellation information for your records.
+        order_summary_canceled: Order %{number} Summary [CANCELED]
+        subject: Cancellation of Order
+      confirm_email:
+        dear_customer: Dear Customer,
+        instructions: กรุณาตรวจสอบและเก็บรายละเอียดการสั่งซื้อนี้เอาไว้
+        order_summary: รายการที่สั่งซื้อ เลขที่ %{number}
+        subject: ยืนยันการสั่งซื้อ
+        thanks: ขอบคุณที่ใช้บริการค่ะ
+    how_bank_transfer_works: 'ขั้นตอนการชำระเงิน'
+    bank_transfer_step1: 'ชำระเงินผ่านช่องทางต่อไปนี้ แล้วบันทึกเลขที่อ้างอิงพร้อมหลักฐานการโอนเงินไว้'
+    bank_transfer_step2: 'แจ้งการชำระเงิน ที่หน้ารายละเอียดการสั่งซื้อ ตามขั้นตอนดังนี้'
+    bank_transfer_step2_a: 'ไปที่หน้า "Account" ของคุณ (มุมขวาบน).'
+    bank_transfer_step2_b: 'เลือกรายการสั่งซื้อที่ต้องการแจ้งชำระเงิน'
+    bank_transfer_step2_c: 'คลิ๊กปุ่ม"แจ้งชำระเงิน" ภายใต้ข้อมูลการชำระเงิน'
+    bank_transfer_step2_d: 'กรอกข้อมูลการชำระเงินแล้วกดยืนยัน'
+    payment_successfully_updated: 'แจ้งโอนเรียบร้อย'
+    deposited_on: 'วันที่โอน'
+    bank_name: 'ชื่อธนาคาร'
+    account_no: 'จำนวนเงิน'
+    transaction_reference_no: 'เลขที่อ้างอิงรายการ'
+    add_details: 'แจ้งชำระเงิน'
+    confirm_details_submit: 'ยืนยัน'
+
   activerecord:
     attributes:
       spree/order:
@@ -62,4 +91,5 @@ th:
         signed_out: 'ท่านได้ออกจากระบบเรียบร้อยแล้ว'
     omniauth_callbacks:
       success: 'ตรวจสอบสิทธิการใช้งานเรียบร้อย'
+  how_bank_transfer_works: 'ขั้นตอนการชำระเงิน'
 

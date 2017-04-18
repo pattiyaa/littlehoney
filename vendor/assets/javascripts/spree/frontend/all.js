@@ -15,3 +15,5 @@
 //= require spree/frontend/spree_recently_viewed
 
 //= require store/spree_favorite_products
+
+//= require spree/frontend/spree_bank_transfer

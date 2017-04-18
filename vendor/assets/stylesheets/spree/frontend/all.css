@@ -12,5 +12,6 @@
  *= require spree/frontend/rating
  *= require spree/frontend/spree_social
  *= require store/spree_favorite_products
+ *= require spree/frontend/spree_bank_transfer
 */
 

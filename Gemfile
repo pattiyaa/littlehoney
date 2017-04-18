@@ -77,3 +77,6 @@ gem 'spree_address_book', github: 'spree-contrib/spree_address_book'
 gem 'spree_social', github: 'spree-contrib/spree_social'
 gem 'spree_recently_viewed', github: 'spree-contrib/spree_recently_viewed'
 gem 'spree_favorite_products', github: 'vinsol/spree_favorite_products'
+
+gem 'spree-bank-transfer', '3.2.0', require: 'spree_bank_transfer',github: 'vinsol-spree-contrib/spree_bank_transfer', branch: '3-2-updated'
+

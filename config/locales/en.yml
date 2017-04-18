@@ -21,3 +21,11 @@
 
 en:
   hello: "Hello world"
+  spree:
+    how_bank_transfer_works: 'HOW BANK TRANSFER WORKS'
+    bank_transfer_step1: 'Deposit order total in one of the below mentioned bank accounts. After this payment a payment reference number will be provided by the bank.'
+    bank_transfer_step2: 'Enter this payment reference number on Order Details page by following steps:'
+    bank_transfer_step2_a: 'Go to "My Account" page.'
+    bank_transfer_step2_b: 'Select Order for which you want to provide details.'
+    bank_transfer_step2_c: 'Click on "Add Details" link visible in "Payment Information" column.'
+    bank_transfer_step2_d: 'Provide payment details and Submit.'
