@@ -14,7 +14,7 @@ Spree.config do |config|
   # Uncomment to stop tracking inventory levels in the application
   # config.track_inventory_levels = false
   config.admin_interface_logo = '/assets/logo/logo_long.png'   
-  config.logo = "/assets/logo/spree_50.png"
+ 
   ActionDispatch::Callbacks.to_prepare do
     require_dependency 'spree/core/product_filters'
   end
