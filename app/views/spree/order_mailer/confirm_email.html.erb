@@ -8,7 +8,7 @@
         <%= Spree.t('order_mailer.confirm_email.instructions') %>
       </p>
       <p>
-        <%= Spree.t('order_mailer.confirm_email.order_summary', number: @order.number) %>
+        <%= link_to Spree.t('order_mailer.confirm_email.order_summary', number: @order.number), order_url(@order) %> 
       </p>
       <table class="container">
         <tr>
@@ -61,6 +61,67 @@
           </td>
         </tr>
       </table>
+      <div>
+        <h5><%=Spree.t(:about_customer)%></h5>
+        <div class="row">
+          <strong>
+            <%=Spree.t(:email)%>
+          </strong>
+           <div >
+              <%= @order.email%>
+          </div>
+        </div>
+        <br/>
+        <div data-hook="order-ship-address">
+            <strong><%= Spree.t(:shipping_address) %></strong>
+            <%= render 'spree/shared/address', address: @order.ship_address %>
+        </div>
+        <br/>
+        <div data-hook="order-payment">
+          <strong><%= Spree.t(:payment_information) %></strong>
+            <div class="payment-info">
+              <% @order.payments.valid.each do |payment| %>
+                <%= render payment %><br/>
+              <% end %>
+            </div>
+        </div>
+      </div>
+      <br/>
+      <div>
+        <h5><%=Spree.t(:about_ourbank)%></h5>
+         <% if (banks = Spree::Bank.active).any? %>
+          <div style="padding:20px 0">
+          <table border="1" align='center' width="80%">
+           
+              <th ><%= Spree.t(:bank_name) %></th>
+              <th ><%= Spree.t(:account_no) %></th>
+              <th ><%= Spree.t(:additional_details) %></th>
+            
+            <% banks.each do |bank| %>
+              <tr>
+                <td><%= bank.name %></td>
+                <td><%= bank.account_no %></td>
+                <td><%= bank.additional_details %></td>
+              </tr>
+            <% end %>
+          </table>
+          </div>
+        <% end %>
+      </div>
+      <br/>
+      <div style="display:block">
+        <strong> <%= Spree.t(:after_payment) %> </strong> <%= link_to Spree.t('order_mailer.confirm_email.order_summary', number: @order.number), order_url(@order) %> 
+        <br/>
+        <p> <%= Spree.t(:bank_transfer_step2) %>  </p>
+        <ol style="padding:10px 0 0 20px" type='a'>
+          <li><%= Spree.t(:bank_transfer_step2_a) %></li>
+          <li><%= Spree.t(:bank_transfer_step2_b) %></li>
+          <li><%= Spree.t(:bank_transfer_step2_c) %></li>
+          <li><%= Spree.t(:bank_transfer_step2_d) %></li>
+        </ol>
+      </div>
+      <br/>
+      <br/>
       <p>
         <%= Spree.t('order_mailer.confirm_email.thanks') %>
       </p>

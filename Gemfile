@@ -69,6 +69,7 @@ gem 'activemerchant', github: 'omise/active_merchant'
 gem 'offsite_payments'
 gem 'spree-omise', github: 'omise/spree-omise'
 gem 'spree_mail_settings', github: 'spree-contrib/spree_mail_settings', branch: 'master'
+gem 'premailer-rails'
 gem "paperclip"
 
 gem 'spree_reviews', github: 'spree-contrib/spree_reviews'
@@ -79,4 +80,4 @@ gem 'spree_recently_viewed', github: 'spree-contrib/spree_recently_viewed'
 gem 'spree_favorite_products', github: 'vinsol/spree_favorite_products'
 
 gem 'spree-bank-transfer', '3.2.0', require: 'spree_bank_transfer',github: 'vinsol-spree-contrib/spree_bank_transfer', branch: '3-2-updated'
-
+# gem 'spree_blogging_spree', github: 'krazedkrish/spree-blogging-spree', branch: '3-0-stable'

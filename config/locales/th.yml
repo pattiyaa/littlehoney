@@ -55,9 +55,9 @@ th:
         order_summary_canceled: Order %{number} Summary [CANCELED]
         subject: Cancellation of Order
       confirm_email:
-        dear_customer: Dear Customer,
+        dear_customer: ''
         instructions: กรุณาตรวจสอบและเก็บรายละเอียดการสั่งซื้อนี้เอาไว้
-        order_summary: รายการที่สั่งซื้อ เลขที่ %{number}
+        order_summary: 'รายการที่สั่งซื้อ เลขที่ #%{number}'
         subject: ยืนยันการสั่งซื้อ
         thanks: ขอบคุณที่ใช้บริการค่ะ
     how_bank_transfer_works: 'ขั้นตอนการชำระเงิน'
@@ -70,10 +70,15 @@ th:
     payment_successfully_updated: 'แจ้งโอนเรียบร้อย'
     deposited_on: 'วันที่โอน'
     bank_name: 'ชื่อธนาคาร'
-    account_no: 'จำนวนเงิน'
+    account_no: 'เลขที่บัญชี'
+    amount: 'จำนวนเงิน'
     transaction_reference_no: 'เลขที่อ้างอิงรายการ'
     add_details: 'แจ้งชำระเงิน'
     confirm_details_submit: 'ยืนยัน'
+    about_customer: 'ข้อมูลเกี่ยวกับลูกค้า'
+    email: 'Email: '
+    about_ourbank: 'ข้อมูลธนาคารของเรา'
+    after_payment: 'ชำระเงินแล้ว สามารถแจ้งการชำระเงินได้ที่ลิ้งค์นี้ค่ะ '
 
   activerecord:
     attributes:
