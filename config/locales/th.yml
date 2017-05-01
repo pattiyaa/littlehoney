@@ -79,11 +79,20 @@ th:
     email: 'Email: '
     about_ourbank: 'ข้อมูลธนาคารของเรา'
     after_payment: 'ชำระเงินแล้ว สามารถแจ้งการชำระเงินได้ที่ลิ้งค์นี้ค่ะ '
+    bulk_discount: 'ราคาส่ง'
+    total_price: 'ส่วนลดเหมา'
+    percent_discount: 'ส่วนลดเป็น %'
+    price_discount: 'ส่วนลดต่อชิ้น'
+    wholesale_discount: "ส่วนลดขายส่ง:" 
+    discount_per_item: "  ได้รับส่วนลด %{number} ต่อชิ้น "
 
   activerecord:
     attributes:
       spree/order:
         considered_risky: 'ประเมินความเสี่ยง'
+    errors:
+        messages:
+            must_be_in_format: 'ฟอร์แมทไม่ถูกต้อง'
   address_book:
     successfully_created: 'เพิ่มที่อยู่เรียบร้อย'
     successfully_updated: 'ปรับปรุงที่อยู่เรียบร้อย'

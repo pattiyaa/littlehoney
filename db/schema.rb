@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170418071212) do
+ActiveRecord::Schema.define(version: 20170427083137) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1200,6 +1200,32 @@ ActiveRecord::Schema.define(version: 20170418071212) do
     t.index ["sku"], name: "index_spree_variants_on_sku", using: :btree
     t.index ["tax_category_id"], name: "index_spree_variants_on_tax_category_id", using: :btree
     t.index ["track_inventory"], name: "index_spree_variants_on_track_inventory", using: :btree
+  end
+
+  create_table "spree_variants_volume_price_models", force: :cascade do |t|
+    t.integer "volume_price_model_id"
+    t.integer "variant_id"
+    t.index ["variant_id"], name: "variant_id", using: :btree
+    t.index ["volume_price_model_id"], name: "volume_price_model_id", using: :btree
+  end
+
+  create_table "spree_volume_price_models", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "spree_volume_prices", force: :cascade do |t|
+    t.integer  "variant_id"
+    t.string   "name"
+    t.string   "range"
+    t.decimal  "amount",                precision: 8, scale: 2
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "discount_type"
+    t.integer  "role_id"
+    t.integer  "volume_price_model_id"
   end
 
   create_table "spree_zone_members", force: :cascade do |t|
