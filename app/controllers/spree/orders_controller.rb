@@ -60,7 +60,7 @@ module Spree
         discountCL=[]
         discountPCL =[]
         productNameCL=[]
-        @order.line_items.each do |item|
+        @order.line_items.each do |key,item|
           isInrange = 0
 
           targetIndex=product.index(item.product.id)
