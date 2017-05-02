@@ -97,16 +97,17 @@ module Spree
         end
         
         isSameDiscountCL.each_with_index  do |check,index|
-          if check && discountCL.present?
+          if check && discountCL[index].present?
             msg = Spree.t(:wholesale_discount)+productNameCL[index]+ Spree.t(:discount_per_item, number: discountPCL[index] ) 
+            
             adj = @order.adjustments.create!(amount: discountCL[index], label: msg, state: 'open',included: 0 ,order_id: @order.id)
-            @order.adjustment_total = @order.adjustments.sum("amount")
-            @order.total = @order.item_total+ @order.adjustment_total 
+           
           end
         end
         
         
-        
+        @order.adjustment_total = @order.adjustments.sum("amount")
+        @order.total = @order.item_total+ @order.adjustment_total 
         
         @order.save
         
