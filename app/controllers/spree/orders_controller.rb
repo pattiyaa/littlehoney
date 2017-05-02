@@ -45,11 +45,13 @@ module Spree
       if @order.line_items.present?
         #Check all product item 
         @order.line_items.each do |item|
-          if product.include?(item.product.id)
-            q = quantity[product.index(item.product.id)];
-            quantity[product.index(item.product.id)] = q+item.quantity
+          product_id =item.product.id
+          if product.include?(product_id)
+            product_index = product.index(product_id)
+            
+            quantity[product_index] = quantity[product_index]+item.quantity
           else
-            product.push(item.product.id)
+            product.push(product_id)
             quantity.push(item.quantity)
           end
         end
@@ -60,8 +62,9 @@ module Spree
         discountCL=[]
         discountPCL =[]
         productNameCL=[]
-        @order.line_items.each do |key,item|
+        @order.line_items.each do |item|
           isInrange = 0
+          
 
           targetIndex=product.index(item.product.id)
           
@@ -69,7 +72,7 @@ module Spree
           isSameDiscountCL[targetIndex] = isSameDiscount
           productNameCL[targetIndex] = item.product.name
           
-          q=quantity[product.index(item.product.id)]
+          q=quantity[targetIndex]
           item_quantity =item.quantity
           p=item.variant.price
           d=[]
@@ -87,14 +90,14 @@ module Spree
              v=item.product.master.volume_prices
              d= checkValumePrice(v,q,item_quantity,p,targetIndex,name,@order,isSameDiscount)
           end
-    
-          discountCL[targetIndex]  = !discountCL[targetIndex].nil? ? discountCL[targetIndex]+ d[:discountPerLineItem] : d[:discountPerLineItem]
-          discountPCL[targetIndex] = d[:discountPerP]
-
+          if d.present?
+            discountCL[targetIndex]  = !discountCL[targetIndex].nil? ? discountCL[targetIndex]+ d[:discountPerLineItem] : d[:discountPerLineItem]
+            discountPCL[targetIndex] = d[:discountPerP]
+          end
         end
         
         isSameDiscountCL.each_with_index  do |check,index|
-          if check
+          if check && discountCL.present?
             msg = Spree.t(:wholesale_discount)+productNameCL[index]+ Spree.t(:discount_per_item, number: discountPCL[index] ) 
             adj = @order.adjustments.create!(amount: discountCL[index], label: msg, state: 'open',included: 0 ,order_id: @order.id)
           end
