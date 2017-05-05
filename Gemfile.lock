@@ -24,6 +24,16 @@ GIT
       spree_core (>= 3.1.0, < 4.0)
 
 GIT
+  remote: https://github.com/spree-contrib/spree_editor.git
+  revision: 290b888c8f97dac011d741e5a0d60d8349c3a4f5
+  specs:
+    spree_editor (3.2.0.alpha)
+      ckeditor (~> 4.2.0)
+      spree_backend (>= 3.1.0, < 4.0)
+      spree_core (>= 3.1.0, < 4.0)
+      tinymce-rails (~> 4.2.5)
+
+GIT
   remote: https://github.com/spree-contrib/spree_i18n.git
   revision: 76c488dbb61bd5da0bde6556e38667d152f2c94d
   branch: master
@@ -168,6 +178,9 @@ GEM
       rails (>= 4.1, < 5.1)
     carmen (1.0.2)
       activesupport (>= 3.0.0)
+    ckeditor (4.2.3)
+      cocaine
+      orm_adapter (~> 0.5.0)
     cldr-plurals-runtime-rb (1.0.1)
     climate_control (0.1.0)
     cocaine (0.5.8)
@@ -459,6 +472,8 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.6)
     tilt (2.0.7)
+    tinymce-rails (4.2.8)
+      railties (>= 3.1.1)
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.0)
@@ -511,6 +526,7 @@ DEPENDENCIES
   spree-omise!
   spree_address_book!
   spree_auth_devise (~> 3.2.0.beta)
+  spree_editor!
   spree_favorite_products!
   spree_gateway (~> 3.2.0.beta)
   spree_i18n!
