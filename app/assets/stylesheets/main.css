@@ -2096,6 +2096,12 @@
 				}
 
 		}
+		@media screen and (max-width: 736px) {
+			
+			.productlist article {
+					width: 100%;
+				}
+		}
 
 /* Header */
 
@@ -2171,7 +2177,7 @@
 				}
 
 		}
-
+		
 		@media screen and (max-width: 900px) {
 
 			#header {
