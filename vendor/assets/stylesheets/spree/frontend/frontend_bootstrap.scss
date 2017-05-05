@@ -30,6 +30,18 @@ img.product-item{
 	border-radius: 2.25rem;
     border: 1px solid;
 }
+#shop_productlist img.product-item{
+
+	height: 250px;
+	
+}
+@media screen and (max-width: 950px) {
+	#shop_productlist img.product-item{
+
+		height: 350px;
+	
+	}
+}
 .product-variant-dropdown{
 	width:350%; 
 	

@@ -2096,12 +2096,14 @@
 				}
 
 		}
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 950px) {
 			
 			.productlist article {
 					width: 100%;
 				}
 		}
+		
+		
 
 /* Header */
 

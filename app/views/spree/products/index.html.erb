@@ -19,9 +19,11 @@
     <% end %>
   </div>
 <% else %>
-  <div data-hook="homepage_products">
+  <div data-hook="shop_product">
     <% cache(cache_key_for_products) do %>
+    <div id="shop_productlist">
       <%= render partial: 'spree/shared/products', locals: { products: @products, taxon: @taxon } %>
+      </div>
     <% end %>
   </div>
 <% end %>
