@@ -86,4 +86,5 @@ gem 'spree-bank-transfer', '3.2.0', require: 'spree_bank_transfer',github: 'vins
 
 gem 'spree_volume_pricing', github: 'spree-contrib/spree_volume_pricing', branch: 'master'
 gem 'spree_editor', github: 'spree-contrib/spree_editor'
+
 # gem 'spree_blogging_spree', github: 'krazedkrish/spree-blogging-spree', branch: '3-0-stable'
